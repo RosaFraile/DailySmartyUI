@@ -2,3 +2,5 @@
 
 1. images
 2. other standalone libraries(no npm support)
+
+### import redux-form
