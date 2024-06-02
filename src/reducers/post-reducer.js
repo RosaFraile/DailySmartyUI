@@ -8,8 +8,11 @@ const INIT_STATE = {
 export default function(state=INIT_STATE, action) {
     switch (action.type) {
         case SET_RECENT_POSTS:
-            recentPosts: action.payload;
-            return [...state, recentPosts];
+            const recentPosts = action.padyload;
+            return {
+                ...state,
+                recentPosts
+            };
         default:
             return state;
     }
