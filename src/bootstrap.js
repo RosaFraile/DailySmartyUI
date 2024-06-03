@@ -8,7 +8,7 @@ import thunk from "redux-thunk";
 
 import reducers from "./reducers";
 
-const createStoreWithMiddleware = applyMiddleware(thunk)(((window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)));
+const createStoreWithMiddleware = applyMiddleware(thunk)(compose((window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)));
 
 import "./style/main.scss";
 

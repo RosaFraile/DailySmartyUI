@@ -13,7 +13,7 @@ export function fetchRecentPosts() {
                 })
             })
             .catch(error => {
-                console.log("fetccRecentPosts error", error)
+                console.log("fetchRecentPosts error", error)
             })
     }
 }
