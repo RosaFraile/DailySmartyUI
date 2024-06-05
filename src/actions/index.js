@@ -1,4 +1,7 @@
-import { SET_RECENT_POSTS } from './types';
+import {
+    SET_RECENT_POSTS,
+    SET_RESULTS_POSTS
+} from './types';
 
 import axios from 'axios';
 
@@ -25,10 +28,10 @@ export function fetchPostsWithQuery(query) {
         axios.get(`https://pokeapi.co/api/v2/berry/${query}/`)
             .then(response => {
                 console.log("response", response);
-             //   dispatch({
-             //       type: SET_RECENT_POSTS,
-             //       payload: response.data.portfolio_items
-             //   })
+                dispatch({
+                    type: SET_RESULTS_POSTS,
+                    payload: response.data.portfolio_items
+                })
             })
             .catch(error => {
                 console.log("fetchRecentPosts error", error)
