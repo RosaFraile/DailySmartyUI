@@ -7,7 +7,7 @@ class ResultsPosts extends Component {
     renderPosts() {
         console.log("results posts", this.props.posts);
         const posts = this.props.posts.map((post, index) => {
-            return <Post key={index} {...post} />
+            return <Post type="result" key={index} {...post} />
         })
         return posts;
     }
@@ -26,7 +26,6 @@ class ResultsPosts extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log("paso por aqui");
     return {
         posts: state.posts.resultsPosts
     }

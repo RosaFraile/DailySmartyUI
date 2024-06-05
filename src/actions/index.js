@@ -27,6 +27,7 @@ export function fetchPostsWithQuery(query) {
         //axios.get(`https://api.dailysmarty.com/search?q=${query}`)
         axios.get('https://rosafraile.devcamp.space/portfolio/portfolio_items')
             .then(response => {
+                console.log("response", response.data.portfolio_items);
                 dispatch({
                     type: SET_RESULTS_POSTS,
             //      payload: response.data.posts
