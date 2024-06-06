@@ -22,7 +22,7 @@ export function fetchRecentPosts() {
     }
 }
 
-export function fetchPostsWithQuery(query) {
+export function fetchPostsWithQuery(query, callback) {
     return function(dispatch) {
         //axios.get(`https://api.dailysmarty.com/search?q=${query}`)
         axios.get('https://rosafraile.devcamp.space/portfolio/portfolio_items')
@@ -33,6 +33,10 @@ export function fetchPostsWithQuery(query) {
             //      payload: response.data.posts
                     payload: response.data.portfolio_items
                 })
+
+                if (callback) {
+                    callback();
+                }
             })
             .catch(error => {
                 console.log("fetchRecentPosts error", error)
