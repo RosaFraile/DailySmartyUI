@@ -8,7 +8,7 @@ class SearchBar extends Component {
       }    
 
     renderInput(field) {
-        return <input placeholder='Search DailySmarty' {...field.input} />
+        return <input placeholder='&#xf002; Search DailySmarty' {...field.input} />
     }
 
     render() {
