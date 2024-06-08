@@ -41,8 +41,12 @@
         }
     }
 
-    .result-post-links {
+    .result-post-links a {
+        text-decoration: none;
 
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 

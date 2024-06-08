@@ -17,6 +17,23 @@ class Post extends Component {
         return this.props.category;
     }
 
+    getNameForPostLink(str) {
+        let n = str.lastIndexOf("/");
+
+        let link = str.substring(n + 1, str.length);
+
+        if ((n + 1) === str.length) {
+            link = str.slice(0, n);
+            n = link.lastIndexOf("/");
+            link = str.substring(n + 1, str.length -1);
+        }
+
+        if (link.includes('.html')) {
+            link = link.substring(0, link.length -5);
+        }
+        return link;
+    }
+
     renderLinks() {
     //    let links = this.props.post_links.map((post_link, index) => {
     //        return(
@@ -33,7 +50,7 @@ class Post extends Component {
             <div className="post-link">
                 <div className='post-link-box'></div>
                 <div className='post-link-link'>
-                    <a href={this.props.url}>Useful link</a>
+                    <a href={this.props.url}>{this.getNameForPostLink(this.props.url)}</a>
                 </div>
             </div>
         )
