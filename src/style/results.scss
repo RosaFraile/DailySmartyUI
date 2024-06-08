@@ -43,6 +43,7 @@
 
     .result-post-links a {
         text-decoration: none;
+        display: flex;
 
         &:hover {
             text-decoration: underline;
@@ -52,6 +53,8 @@
 
 .post-link {
     display: flex;
+    flex-basis: 205px;
+    margin-right: 37px;
     
 
     .post-link-box {
